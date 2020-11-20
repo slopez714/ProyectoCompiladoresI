@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="512.0" prefWidth="648.0" style="-fx-background-color: #2E2E2E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.compiladores.logica.controladores.InicioController">
+   <children>
+      <Button fx:id="botonCambiar" layoutX="258.0" layoutY="472.0" mnemonicParsing="false" onAction="#analizarCodigo" text="Analizar Codigo">
+         <font>
+            <Font name="DejaVu Sans Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="codigoFuente" layoutX="31.0" layoutY="26.0" prefHeight="176.0" prefWidth="389.0" />
+
+      <TreeView fx:id="arbolVisual" layoutX="445.0" layoutY="-128.0" prefHeight="435.0" prefWidth="200.0" />
+      <TabPane layoutX="39.0" layoutY="229.0" prefHeight="200.0" prefWidth="343.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tablaTokensBien" text="Tokens" >
+            <TableView fx:id="tablaTokens" layoutX="445.0" layoutY="244.0" prefHeight="99.0" prefWidth="129.0">
+                <columns>
+                    <TableColumn fx:id="colLexema" prefWidth="75.0" text="Lexema" />
+                    <TableColumn fx:id="colFila" minWidth="1.0" prefWidth="93.0" text="Fila" />
+                    <TableColumn fx:id="colColumna" minWidth="1.0" prefWidth="108.0" text="Columna" />
+                    <TableColumn fx:id="colCategoria" minWidth="37.0" prefWidth="90.0" text="Categoria" />
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+                <effect>
+                    <DropShadow radius="19.1075" spread="0.1" width="57.43" />
+                </effect>
+            </TableView>
+          </Tab>
+          <Tab fx:id="tabErroresSintactico" text="Errores sintacticos">
+              <TableView fx:id="tablaErroresSintacticos" layoutX="445.0" layoutY="244.0" prefHeight="99.0" prefWidth="129.0">
+                  <columns>
+                      <TableColumn fx:id="colErrorSintaxis" prefWidth="75.0" text="Error" />
+                      <TableColumn fx:id="colFilaSintaxis" minWidth="1.0" prefWidth="93.0" text="Fila" />
+                      <TableColumn fx:id="colColumnaSintaxis" minWidth="1.0" prefWidth="108.0" text="Columna" />
+                  </columns>
+                  <columnResizePolicy>
+                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                  </columnResizePolicy>
+                  <effect>
+                      <DropShadow radius="19.1075" spread="0.1" width="57.43" />
+                  </effect>
+              </TableView>
+          </Tab>
+
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

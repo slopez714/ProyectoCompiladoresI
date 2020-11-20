@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a25cb6e2-a4c3-4d9d-88cc-0f8e82c8ce02" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="AnalizadorLexico" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Enum" />
+        <option value="FxmlFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZogruHQU19u5OckREPEKrhnge7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="co.uniquindio.compiladores.logica.lexico" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.co.uniquindio.compiladores.logica.app.Aplicacion">
+    <configuration name="co.uniquindio.compiladores.logica.AplicacionKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AnalizadorLexico" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="co.uniquindio.compiladores.logica.AplicacionKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="co.uniquindio.compiladores.logica.app.Aplicacion" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AnalizadorLexico" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="co.uniquindio.compiladores.logica.app.Aplicacion" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.co.uniquindio.compiladores.logica.app.Aplicacion" />
+        <item itemvalue="Kotlin.co.uniquindio.compiladores.logica.AplicacionKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a25cb6e2-a4c3-4d9d-88cc-0f8e82c8ce02" name="Default Changelist" comment="" />
+      <created>1585511062883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585511062883</updated>
+      <workItem from="1585963581065" duration="9446000" />
+      <workItem from="1586034408626" duration="1968000" />
+      <workItem from="1586128941018" duration="2365000" />
+      <workItem from="1586132087738" duration="624000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="471" y="65" width="440" height="568" key="#com.intellij.ide.util.MemberChooser" timestamp="1588451268170">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="471" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588451268170" />
+    <state x="471" y="68" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1585968618223" />
+    <state x="471" y="90" width="440" height="568" key="#com.intellij.ide.util.MemberChooser/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585965496894" />
+    <state x="524" y="258" width="307" height="222" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586138793065">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="524" y="258" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1586138793065" />
+    <state x="524" y="288" width="307" height="222" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585964861309" />
+    <state x="406" y="24" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1585964688174">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="406" y="24" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585964688174" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1585511611036">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585511611036" />
+    <state width="1367" height="131" key="GridCell.Tab.0.bottom" timestamp="1588481175584">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="131" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588481175584" />
+    <state width="1316" height="50" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1585974263466" />
+    <state width="1316" height="50" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586132907768" />
+    <state width="1316" height="25" key="GridCell.Tab.0.bottom/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585966924088" />
+    <state width="1367" height="131" key="GridCell.Tab.0.center" timestamp="1588481175584">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="131" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588481175584" />
+    <state width="1316" height="50" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1585974263466" />
+    <state width="1316" height="50" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1586132907768" />
+    <state width="1316" height="25" key="GridCell.Tab.0.center/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585966924087" />
+    <state width="1367" height="131" key="GridCell.Tab.0.left" timestamp="1588481175583">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="131" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588481175583" />
+    <state width="1316" height="50" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1585974263466" />
+    <state width="1316" height="50" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1586132907768" />
+    <state width="1316" height="25" key="GridCell.Tab.0.left/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585966924087" />
+    <state width="1367" height="131" key="GridCell.Tab.0.right" timestamp="1588481175584">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="131" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588481175584" />
+    <state width="1316" height="50" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1585974263466" />
+    <state width="1316" height="50" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1586132907768" />
+    <state width="1316" height="25" key="GridCell.Tab.0.right/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585966924088" />
+    <state x="166" y="0" width="1024" height="744" key="SettingsEditor" timestamp="1588467481644">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="166" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588467481644" />
+    <state x="166" y="24" width="1024" height="744" key="SettingsEditor/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585964803849" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588208568900">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588208568900" />
+    <state x="379" y="198" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1586128944131" />
+    <state x="379" y="216" key="com.intellij.ide.util.TipDialog/0.24.1366.744/1366.0.1920.1080@0.24.1366.744" timestamp="1585963585493" />
+  </component>
+</project>
