@@ -18,8 +18,8 @@ class DeclaracionVariable() : Sentencia() {
 
     override fun getArbolVisual(): TreeItem<String> {
         var declaracion= TreeItem<String>("Declaracion Variable")
-        declaracion.children.add(TreeItem("Nombre: " +nombre))
-        declaracion.children.add(TreeItem("Tipo de Dato: " +tipoDato))
+        declaracion.children.add(TreeItem("Nombre: " +nombre!!.lexema))
+        declaracion.children.add(TreeItem("Tipo de Dato: " +tipoDato!!.lexema))
         return declaracion
     }
 }

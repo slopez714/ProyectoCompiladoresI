@@ -6,14 +6,18 @@ import javafx.scene.control.TreeItem
 
 class Incremento(var identificador: Token?, var operador: Token?) : Sentencia() {
 
+    override fun toString(): String {
+        return "Incremento(identificador=$identificador , operador=$operador )"
+    }
     override fun getArbolVisual(): TreeItem<String> {
         var incremento= TreeItem("Incremento")
         if(identificador!=null){
-            incremento.children.add(TreeItem("Nombre: " +identificador))
+            incremento.children.add(TreeItem("Nombre: " +identificador!!.lexema))
         }
         if(operador!=null){
-            incremento.children.add(TreeItem("Operador: " +operador))
+            incremento.children.add(TreeItem("Operador: " +operador!!.lexema))
         }
         return incremento
     }
+
 }

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import javafx.scene.control.TreeItem
 
 class ExpresionCadena(): Expresion() {
     var cadena: Token? = null
@@ -13,5 +14,14 @@ class ExpresionCadena(): Expresion() {
 
     constructor(cadena: Token?){
         this.cadena=cadena
+    }
+
+    override fun getArbolVisual(): TreeItem<String> {
+        var expresionCadena = TreeItem<String>("Expresion de cadena")
+        expresionCadena.children.add(TreeItem("Cadena: "+cadena!!.lexema))
+        if(expresion!=null){
+            expresionCadena.children.add(expresion!!.getArbolVisual())
+        }
+        return expresionCadena
     }
 }

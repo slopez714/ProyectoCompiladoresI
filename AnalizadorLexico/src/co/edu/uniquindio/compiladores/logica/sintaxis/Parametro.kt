@@ -12,8 +12,8 @@ class Parametro( var nombre:Token , var tipoDato: Token) {
     fun getArbolVisual(): TreeItem<String> {
         var parametros= TreeItem<String>("Parametro")
 
-        parametros.children.add(TreeItem("Nombre: " + nombre))
-        parametros.children.add(TreeItem("Tipo de Dato: " + tipoDato))
+        parametros.children.add(TreeItem("Nombre: " + nombre!!.lexema))
+        parametros.children.add(TreeItem("Tipo de Dato: " + tipoDato!!.lexema))
 
         return parametros
     }

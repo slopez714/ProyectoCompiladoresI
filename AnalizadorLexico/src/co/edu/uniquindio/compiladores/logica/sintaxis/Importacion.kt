@@ -1,6 +1,7 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import javafx.scene.control.TreeItem
 
 class Importacion () : Sentencia(){
     var paquete: Paquete?= null
@@ -13,5 +14,15 @@ class Importacion () : Sentencia(){
 
     constructor(paquete: Paquete){
         this.paquete=paquete
+    }
+
+    override fun getArbolVisual(): TreeItem<String> {
+        var importacion = TreeItem<String>("Importacion")
+        importacion.children.add(paquete!!.getArbolVisual())
+        if(nombre!=null){
+            importacion.children.add(TreeItem("Nombre: " + nombre!!.lexema))
+        }
+
+        return importacion
     }
 }

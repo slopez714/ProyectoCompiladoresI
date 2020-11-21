@@ -24,12 +24,10 @@ class ExpresionRelacional() : Expresion() {
 
     override fun getArbolVisual(): TreeItem<String> {
         var expresionRelacional= TreeItem<String>("Expresion Relacional")
-        var expresionA=TreeItem(expresion!!.getArbolVisual())
-        expresionRelacional.children.add(expresionA)
+        expresionRelacional.children.add(expresion!!.getArbolVisual())
         expresionRelacional.children.add(TreeItem("Operador: "+ operador!!.lexema))
         if(expresion2!=null){
-            var expresionB=TreeItem(expresion!!.getArbolVisual())
-            expresionRelacional.children.add(expresionB)
+            expresionRelacional.children.add(expresion2!!.getArbolVisual())
         }
         return expresionRelacional
     }

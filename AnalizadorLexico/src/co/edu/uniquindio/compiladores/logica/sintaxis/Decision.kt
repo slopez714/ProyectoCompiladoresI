@@ -21,8 +21,7 @@ class Decision() : Sentencia()  {
 
     override fun getArbolVisual(): TreeItem<String> {
         var decision= TreeItem("Decision")
-        var expresion= TreeItem(condicion?.getArbolVisual())
-        decision.children.add(expresion)
+        decision.children.add(condicion!!.getArbolVisual())
         if(listaSentencia!=null){
             var sentencias1= TreeItem("Sentencia")
             for(s in listaSentencia!!){
