@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class ExpresionCadena(): Expresion() {
+class ExpresionCadena: Expresion {
     var cadena: Token? = null
     var expresion: Expresion? = null
 

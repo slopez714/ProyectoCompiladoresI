@@ -4,7 +4,7 @@ import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
 
-class ExpresionAritmetica (): Expresion() {
+class ExpresionAritmetica : Expresion {
 
     var expresionAritmetica: ExpresionAritmetica? = null
     var termino:Termino? = null

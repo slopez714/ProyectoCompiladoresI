@@ -3,18 +3,18 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class InvocacionMetodo() : Sentencia() {
+class InvocacionMetodo : Sentencia {
 
     var identificador: Token?=null
     var listaArgumento: ArrayList<Argumento>?=null
 
-    constructor(identificador: Token?, listaArgumento: ArrayList<Argumento>?) : this()
+    constructor(identificador: Token?, listaArgumento: ArrayList<Argumento>?)
     {
         this.identificador=identificador
         this.listaArgumento = listaArgumento
     }
 
-    constructor(identificador : Token) : this()
+    constructor(identificador : Token)
     {
         this.identificador = identificador
     }

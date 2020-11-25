@@ -4,20 +4,20 @@ import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
 
-class AsignacionVariable() : Sentencia() {
+class AsignacionVariable : Sentencia {
 
         var tipoDato:Token?=null
         var identificadorVariable: Token?=null
         var expresion : Expresion? = null
 
-    constructor(tipoDato : Token, identificadorVariable: Token, expresion : Expresion) : this()
+    constructor(tipoDato : Token, identificadorVariable: Token, expresion : Expresion)
     {
         this.tipoDato=tipoDato
         this.identificadorVariable=identificadorVariable
         this.expresion=expresion
     }
 
-    constructor(identificadorVariable: Token, expresion : Expresion) : this()
+    constructor(identificadorVariable: Token, expresion : Expresion)
     {
         this.identificadorVariable=identificadorVariable
         this.expresion=expresion

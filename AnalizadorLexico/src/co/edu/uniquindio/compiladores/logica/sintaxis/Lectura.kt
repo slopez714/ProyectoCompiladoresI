@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class Lectura() : Sentencia() {
+class Lectura : Sentencia {
     var identificador : Token? = null
 
     constructor(identificador: Token?){

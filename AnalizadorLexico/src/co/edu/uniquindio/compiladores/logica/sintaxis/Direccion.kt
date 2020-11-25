@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class Direccion() {
+class Direccion {
     var direccion1: Token? = null
     var direccion2: Direccion? = null
 

@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class DeclaracionVariable() : Sentencia() {
+class DeclaracionVariable : Sentencia {
 
     var nombre: Token? = null
     var tipoDato: Token?= null

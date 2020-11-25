@@ -3,20 +3,20 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class ExpresionRelacional() : Expresion() {
+class ExpresionRelacional : Expresion {
 
     var expresion : ExpresionAritmetica?=null
     var operador: Token?=null
     var expresion2 : ExpresionAritmetica? = null
 
-    constructor(expresion : ExpresionAritmetica, operador: Token, expresion2 : ExpresionAritmetica) : this()
+    constructor(expresion : ExpresionAritmetica, operador: Token, expresion2 : ExpresionAritmetica)
     {
         this.expresion=expresion
         this.operador=operador
         this.expresion2=expresion2
     }
 
-    constructor(expresion : ExpresionAritmetica, operador: Token) : this()
+    constructor(expresion : ExpresionAritmetica, operador: Token)
     {
         this.expresion=expresion
         this.operador=operador

@@ -32,7 +32,7 @@ class inicioController: Initializable{
     @FXML
     lateinit var colColumna: TableColumn<Token, Int>
     @FXML
-    lateinit var tablaErrorSintacticos: TableView<Error>
+    lateinit var tablaErroresSintacticos: TableView<Error>
     @FXML
     lateinit var colErrorSintaxis: TableColumn<Token, String>
     @FXML
@@ -66,7 +66,7 @@ class inicioController: Initializable{
             val sintaxis= AnalizadorSintactico(lexico.listaTokens)
             val uc= sintaxis.esUnidadDeCompilacion()
 
-            tablaErrorSintacticos.items= FXCollections.observableArrayList<Error?>(sintaxis.listaErrores)
+            tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(sintaxis.listaErrores)
 
             if(uc!=null){
                 arbolVisual.root = uc.getArbolVisual()

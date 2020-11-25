@@ -2,7 +2,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 
 import javafx.scene.control.TreeItem
 
-class Impresion() : Sentencia(){
+class Impresion : Sentencia{
     var expresion : Expresion?= null
 
     constructor(expresion : Expresion){

@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class Importacion () : Sentencia(){
+class Importacion  : Sentencia{
     var paquete: Paquete?= null
     var nombre: Token? = null
 

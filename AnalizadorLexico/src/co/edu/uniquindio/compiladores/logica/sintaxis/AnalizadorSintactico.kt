@@ -884,12 +884,9 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
     }
 
     fun reportarError(mensaje: String) {
-        listaErrores.add(mensaje,tokenActual.fila, tokenActual.columna)
+        listaErrores.add(Error(mensaje,tokenActual.fila, tokenActual.columna))
 
     }
 
 }
 
-private fun <E> java.util.ArrayList<E>.add(mensaje: String, fila: Int, columna: Int) {
-    TODO("Not yet implemented")
-}

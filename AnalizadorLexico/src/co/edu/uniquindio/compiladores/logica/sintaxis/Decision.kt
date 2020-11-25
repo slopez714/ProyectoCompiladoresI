@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class Decision() : Sentencia()  {
+class Decision : Sentencia  {
     var condicion: ExpresionRelacional? = null
     var listaSentencia: ArrayList<Sentencia>? =null
     var listaSentencia2 : ArrayList<Sentencia>?= null

@@ -3,7 +3,7 @@ package co.edu.uniquindio.compiladores.logica.sintaxis
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import javafx.scene.control.TreeItem
 
-class Ciclo() : Sentencia() {
+class Ciclo : Sentencia{
     var asignacion: AsignacionVariable?= null
     var expresion: ExpresionRelacional?= null
     var incremento: Token?= null
