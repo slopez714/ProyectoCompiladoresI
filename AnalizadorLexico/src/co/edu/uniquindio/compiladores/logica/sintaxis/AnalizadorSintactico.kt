@@ -54,6 +54,7 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
                 if (tokenActual.categoria == Categoria.PARENTESIS_IZQUIERDO) {
                     obtenerSiguienteToken()
                     val parametros: ArrayList<Parametro> = esListaParametros()
+                    obtenerSiguienteToken()
                     if (tokenActual.categoria == Categoria.PARENTESIS_DERECHO) {
                         obtenerSiguienteToken()
                         var tipoRetorno: Token? = null

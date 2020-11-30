@@ -14,10 +14,10 @@
       </Button>
       <TextArea fx:id="codigoFuente" layoutX="31.0" layoutY="26.0" prefHeight="176.0" prefWidth="389.0" />
 
-      <TreeView fx:id="arbolVisual" layoutX="445.0" layoutY="-128.0" prefHeight="435.0" prefWidth="200.0" />
+      <TreeView fx:id="arbolVisual" layoutX="434.0" layoutY="20.0" prefHeight="435.0" prefWidth="200.0" />
       <TabPane layoutX="39.0" layoutY="229.0" prefHeight="200.0" prefWidth="343.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="tablaTokensBien" text="Tokens" >
+          <Tab fx:id="tablaTokensBien" text="Tokens">
             <TableView fx:id="tablaTokens" layoutX="445.0" layoutY="244.0" prefHeight="99.0" prefWidth="129.0">
                 <columns>
                     <TableColumn fx:id="colLexema" prefWidth="75.0" text="Lexema" />
