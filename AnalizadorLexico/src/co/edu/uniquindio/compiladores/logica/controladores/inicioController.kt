@@ -8,10 +8,7 @@ import javafx.collections.FXCollections
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
-import javafx.scene.control.TableColumn
-import javafx.scene.control.TableView
-import javafx.scene.control.TextArea
-import javafx.scene.control.TreeView
+import javafx.scene.control.*
 import javafx.scene.control.cell.PropertyValueFactory
 import java.net.URL
 import java.util.*
@@ -52,6 +49,7 @@ class inicioController: Initializable{
         colErrorSintaxis.cellValueFactory = PropertyValueFactory( "Error")
         colFilaSintaxis.cellValueFactory = PropertyValueFactory( "fila")
         colColumnaSintaxis.cellValueFactory = PropertyValueFactory( "columna")
+        arbolVisual.root= TreeItem("Unidad de compilacion")
 
     }
 

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
+import co.edu.uniquindio.compiladores.logica.lexico.Error
 import javafx.scene.control.TreeItem
 
 class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParametros: ArrayList<Parametro>,
@@ -28,5 +30,18 @@ class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParame
         funcion.children.add(sentencias)
 
         return funcion
+    }
+
+    fun obtenerParametros(): ArrayList<Error>{
+        val lista: ArrayList<Error> = ArrayList() //debe incializarla aaaaa ya profe muchas gracias. Listo, chao chao profe
+        for(p in listaParametros){
+            lista.add(Error(p.tipoDato.lexema, p.tipoDato.fila, p.tipoDato.columna))
+        }
+        return lista
+    }
+
+    fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito:String){
+
+        tablaSimbolos.guardarSimboloFuncion(nombreFuncion.lexema, tipoRetorno!!.lexema, obtenerParametros())
     }
 }

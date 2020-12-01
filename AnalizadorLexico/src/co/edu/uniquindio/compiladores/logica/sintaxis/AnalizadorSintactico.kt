@@ -10,7 +10,6 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
     var posicionActual=0
     var tokenActual= listaTokens[0]
     var listaErrores= ArrayList<Error>()
-    var unidadDeCompilacion= esUnidadDeCompilacion()
 
     fun obtenerSiguienteToken(){
         posicionActual++
@@ -44,6 +43,7 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
 
     /**
      * <Funcion> :: definir <Metodo> "("[<ListaParametros>]")"":"<TipoRetorno>
+     *     definir M(asgasga) ( v(a) : entero)) : entero{}
      */
     fun esFuncion(): Funcion? {
         if (tokenActual.categoria ==Categoria.PALABRARESERVADA && tokenActual.lexema == "definir"){
@@ -54,25 +54,27 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
                 if (tokenActual.categoria == Categoria.PARENTESIS_IZQUIERDO) {
                     obtenerSiguienteToken()
                     val parametros: ArrayList<Parametro> = esListaParametros()
-                    obtenerSiguienteToken()
                     if (tokenActual.categoria == Categoria.PARENTESIS_DERECHO) {
                         obtenerSiguienteToken()
                         var tipoRetorno: Token? = null
                         if (tokenActual.categoria == Categoria.DOS_PUNTOS) {
                             obtenerSiguienteToken()
                             tipoRetorno = esTipoRetorno()
-                            obtenerSiguienteToken()
-                            if (tipoRetorno == null) {
+                            if (tipoRetorno != null){
+                                obtenerSiguienteToken()
+                                val bloqueSentencias: ArrayList<Sentencia> = esBloqueSentencias()
+                                if (bloqueSentencias != null) {
+                                    return Funcion(nombre, tipoRetorno, parametros, bloqueSentencias)
+                                } else {
+                                    reportarError("Faltó el bloque de sentencias en la función")
+                                }
+                            }else{
                                 reportarError("Falta el tipo de retorno de la función")
                             }
+                        }else{
+                            reportarError("Faltan los dos puntos")
                         }
-                        val bloqueSentencias: ArrayList<Sentencia> = esBloqueSentencias()
-                        if (bloqueSentencias != null) {
-                            return Funcion(nombre, tipoRetorno, parametros, bloqueSentencias)
-                        } else {
-                            reportarError("Faltó el bloque de sentencias en la función")
 
-                        }
                     } else {
                         reportarError("Falta paréntesis derecho")
                     }
@@ -102,6 +104,7 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
                 parametro=null
             }
         }
+
         return listaParametro
     }
 
@@ -116,6 +119,7 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
                 obtenerSiguienteToken()
                 val tipoDato= esTipoRetorno()
                 if(tipoDato!=null){
+                    obtenerSiguienteToken()
                     return Parametro(nombre,tipoDato)
                 }
 
@@ -130,17 +134,25 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
     }
 
     fun esBloqueSentencias(): ArrayList<Sentencia>{
-        var listaSentencia = ArrayList<Sentencia>()
-        var sentencia: Sentencia? = esSentencia()
-        while(sentencia!=null){
-            listaSentencia.add(sentencia)
-            sentencia=esSentencia()
+        if (tokenActual.categoria== Categoria.LLAVE_IZQUIERDA) {
+            obtenerSiguienteToken()
+            var listaSentencia = ArrayList<Sentencia>()
+            var sentencia: Sentencia? = esSentencia()
+            while (sentencia != null) {
+                listaSentencia.add(sentencia)
+                sentencia = esSentencia()
+            }
+            if(tokenActual.categoria==Categoria.LLAVE_DERECHA){
+                obtenerSiguienteToken()
+                return listaSentencia
+            }
         }
-        return listaSentencia
+        return ArrayList()
     }
 
     fun esSentencia(): Sentencia? {
         var s:Sentencia?= null
+        val posInicial = posicionActual
         s= esCiclo()
         if(s!=null){
             return s
@@ -203,10 +215,14 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
             return s;
         }
 
+        if(s==null){
+            hacerBT(posInicial)
+        }
+
         return s;
     }
     /**
-     * <decremento> :: = identificador "." dec ";"
+     * <decremento> :: = identificador "." dec ".."
      *
      */
     fun esDecremento(): Sentencia? {
@@ -234,7 +250,7 @@ class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
     }
 
     /**
-     * <Incremento> :: = identificador "." inc ";"
+     * <Incremento> :: = identificador "." inc ".."
      *
      */
     fun esIncremento(): Sentencia? {

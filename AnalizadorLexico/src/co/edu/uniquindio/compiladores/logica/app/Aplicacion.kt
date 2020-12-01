@@ -1,5 +1,7 @@
 package co.edu.uniquindio.compiladores.logica.app
 
+import co.edu.uniquindio.compiladores.logica.lexico.AnalizadorLexico
+import co.edu.uniquindio.compiladores.logica.sintaxis.AnalizadorSintactico
 import javafx.application.Application
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -25,7 +27,11 @@ class Aplicacion : Application(){
 
         @JvmStatic
         fun main(args: Array<String>){
-            launch(Aplicacion::class.java)
+           launch(Aplicacion::class.java)
+           /* val lexico= AnalizadorLexico("definir M(asgasga) ( v(a) : entero) : entero{}")
+            lexico.analizar()
+            val sintaxis = AnalizadorSintactico(lexico.listaTokens)
+            print(sintaxis.esUnidadDeCompilacion())*/
         }
 
     }

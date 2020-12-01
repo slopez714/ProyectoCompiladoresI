@@ -1391,18 +1391,12 @@ class AnalizadorLexico (var codigoFuente:String){
             palabra+=caracterActual
             obtenerSiguienteCaracter()
         }
-        var i = 0
-        var j= palabrasResevadas.size
-        while (i<j){
-            if(palabra.equals(palabrasResevadas[i])){
-                var lexema= ""
-                lexema += palabra
-                obtenerSiguienteCaracter()
-                almacenarToken(lexema, Categoria.PALABRARESERVADA, filaInicial, columnaInicial)
-                return true
-            }
-            i++
+
+        if(palabrasResevadas.contains(palabra)){
+            almacenarToken(palabra, Categoria.PALABRARESERVADA, filaInicial, columnaInicial)
+            return true
         }
+
 
 
         return false
