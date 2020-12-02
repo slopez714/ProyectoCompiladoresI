@@ -1,5 +1,8 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
+import co.edu.uniquindio.compiladores.logica.lexico.Error
+import co.edu.uniquindio.compiladores.logica.semantica.Simbolo
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
 import javafx.scene.control.TreeItem
 
 open class Expresion {
@@ -8,4 +11,8 @@ open class Expresion {
    var expresion= TreeItem<String>("Expresion")
    return expresion
   }
+
+    open fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, s: Simbolo) {
+
+    }
 }

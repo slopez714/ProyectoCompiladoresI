@@ -1,6 +1,8 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
-import co.edu.uniquindio.compiladores.logica.lexico.Token
+import co.edu.uniquindio.compiladores.logica.lexico.Error
+import co.edu.uniquindio.compiladores.logica.semantica.Simbolo
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
 import javafx.scene.control.TreeItem
 
 class Decision : Sentencia  {
@@ -8,12 +10,12 @@ class Decision : Sentencia  {
     var listaSentencia: ArrayList<Sentencia>? =null
     var listaSentencia2 : ArrayList<Sentencia>?= null
 
-    constructor(condicion:ExpresionRelacional,listaSentencia: ArrayList<Sentencia>?){
+    constructor(condicion: ExpresionRelacional, listaSentencia: ArrayList<Sentencia>?){
         this.condicion=condicion
         this.listaSentencia=listaSentencia
     }
 
-    constructor(condicion:ExpresionRelacional, listaSentencia: ArrayList<Sentencia>?, listaSentencia2: ArrayList<Sentencia>?){
+    constructor(condicion: ExpresionRelacional, listaSentencia: ArrayList<Sentencia>?, listaSentencia2: ArrayList<Sentencia>?){
         this.condicion=condicion
         this.listaSentencia=listaSentencia
         this.listaSentencia2= listaSentencia2
@@ -38,6 +40,17 @@ class Decision : Sentencia  {
         }
 
         return decision
+    }
+
+    override fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito :String) {
+        for(s in listaSentencia!!){
+            s.llenarTablaSimbolos(tablaSimbolos,erroresSemanticos,ambito)
+        }
+        if(listaSentencia2!=null){
+            for(sen in listaSentencia2!!){
+                sen.llenarTablaSimbolos(tablaSimbolos,erroresSemanticos,ambito)
+            }
+        }
     }
 
 }

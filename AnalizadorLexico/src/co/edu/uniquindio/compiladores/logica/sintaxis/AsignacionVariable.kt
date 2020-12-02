@@ -1,6 +1,8 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
+import co.edu.uniquindio.compiladores.logica.lexico.Error
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
 import javafx.scene.control.TreeItem
 
 
@@ -33,5 +35,6 @@ class AsignacionVariable : Sentencia {
         asignacion.children.add(expresiones)
         return asignacion
     }
+
 
 }

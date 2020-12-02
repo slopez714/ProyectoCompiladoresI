@@ -3,6 +3,7 @@ package co.edu.uniquindio.compiladores.logica.controladores
 import co.edu.uniquindio.compiladores.logica.lexico.AnalizadorLexico
 import co.edu.uniquindio.compiladores.logica.lexico.Error
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import co.edu.uniquindio.compiladores.logica.semantica.AnalizadorSemantico
 import co.edu.uniquindio.compiladores.logica.sintaxis.AnalizadorSintactico
 import javafx.collections.FXCollections
 import javafx.event.ActionEvent
@@ -68,9 +69,20 @@ class inicioController: Initializable{
 
             if(uc!=null){
                 arbolVisual.root = uc.getArbolVisual()
-            }
-        }
 
+                val semantica= AnalizadorSemantico(uc)
+                semantica.llenarTablaSimbolos()
+                print(semantica.tablaSimbolos)
+                print(semantica.erroresSemanticos)
+            }else{
+                arbolVisual.root=TreeItem("Unidad de Compilacion")
+            }
+        }else{
+            val alerta = Alert(Alert.AlertType.ERROR)
+            alerta.headerText= null
+            alerta.contentText="Hay errores lexicos en el codigo fuente"
+            alerta.showAndWait()
+        }
 
     }
 

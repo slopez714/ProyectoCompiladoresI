@@ -5,7 +5,7 @@ import co.edu.uniquindio.compiladores.logica.lexico.Token
 import co.edu.uniquindio.compiladores.logica.lexico.Error
 
 
-class AnalizadorSintactico(var listaTokens:ArrayList <Token>) {
+class AnalizadorSintactico(var listaTokens: ArrayList<Token>) {
 
     var posicionActual=0
     var tokenActual= listaTokens[0]

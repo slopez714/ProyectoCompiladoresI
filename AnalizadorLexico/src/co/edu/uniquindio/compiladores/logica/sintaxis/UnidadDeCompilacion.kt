@@ -18,13 +18,15 @@ class UnidadDeCompilacion( var listaFunciones: ArrayList<Funcion>) {
         return raiz
     }
 
-   /** fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>){
+    fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>){
         for (f in listaFunciones) {
             f.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos, "unidadCompilacion")
         }
-    }*/
+    }
 
     fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>){
-
+        for (f in listaFunciones) {
+            f.analizarSemantica(tablaSimbolos, erroresSemanticos);
+        }
     }
 }

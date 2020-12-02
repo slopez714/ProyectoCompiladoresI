@@ -1,5 +1,7 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
+import co.edu.uniquindio.compiladores.logica.lexico.Error
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
 import javafx.scene.control.TreeItem
 
 class Impresion : Sentencia{
@@ -15,4 +17,5 @@ class Impresion : Sentencia{
 
         return impresion
     }
+
 }

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.compiladores.logica.sintaxis
 
+import co.edu.uniquindio.compiladores.logica.lexico.Error
 import co.edu.uniquindio.compiladores.logica.lexico.Token
+import co.edu.uniquindio.compiladores.logica.semantica.TablaSimbolos
 import javafx.scene.control.TreeItem
 
 class DeclaracionVariable : Sentencia {
@@ -21,5 +23,9 @@ class DeclaracionVariable : Sentencia {
         declaracion.children.add(TreeItem("Nombre: " +nombre!!.lexema))
         declaracion.children.add(TreeItem("Tipo de Dato: " +tipoDato!!.lexema))
         return declaracion
+    }
+
+    override fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito: String) {
+        tablaSimbolos.guardarSimboloValor(nombre!!.lexema, tipoDato!!.lexema, ambito, nombre!!.fila, nombre!!.columna)
     }
 }
