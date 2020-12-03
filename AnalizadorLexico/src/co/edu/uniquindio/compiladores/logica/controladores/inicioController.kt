@@ -74,6 +74,9 @@ class inicioController: Initializable{
                 semantica.llenarTablaSimbolos()
                 print(semantica.tablaSimbolos)
                 print(semantica.erroresSemanticos)
+
+                semantica.analizarSemantica()
+                print(semantica.erroresSemanticos)
             }else{
                 arbolVisual.root=TreeItem("Unidad de Compilacion")
             }

@@ -9,7 +9,7 @@ class Simbolo {
     var fila = 0
     var columna = 0
     var ambito: String? = ""
-    var tipoParametros: ArrayList<Error>? = null
+    var tipoParametros: ArrayList<String>? = null
 
     /**
      * Constructor para un simbolo de tipo valor
@@ -30,7 +30,7 @@ class Simbolo {
     definir M(asgasga) ( v(a) : entero) : caracter{
     }
      */
-    constructor(nombre: String, tipo: String, tipoParametros: ArrayList<Error>){
+    constructor(nombre: String, tipo: String, tipoParametros: ArrayList<String>){
         this.nombre = nombre
         this.tipo = tipo
         this.tipoParametros = tipoParametros

@@ -1404,11 +1404,11 @@ class AnalizadorLexico (var codigoFuente:String){
 
     fun llenarPalabras() {
 
-        palabrasResevadas.add("cadena")
+        palabrasResevadas.add("cad")
         palabrasResevadas.add("caracter")
         palabrasResevadas.add("entero")
         palabrasResevadas.add("decimal")
-        palabrasResevadas.add("boolean")
+        palabrasResevadas.add("bool")
         palabrasResevadas.add("noretorna")
         palabrasResevadas.add("v")
         palabrasResevadas.add("f")

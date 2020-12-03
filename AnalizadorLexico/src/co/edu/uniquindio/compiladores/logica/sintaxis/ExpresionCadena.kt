@@ -28,7 +28,13 @@ class ExpresionCadena: Expresion {
         return expresionCadena
     }
 
-    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, s: Simbolo) {
-        super.analizarSemantica(tablaSimbolos, erroresSemanticos, s)
+    override fun obtenerTipo(tablaSimbolos: TablaSimbolos, ambito:String, erroresSemanticos: ArrayList<Error>): String {
+        return "cad"
+    }
+
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito:String) {
+        if(expresion!=null){
+            expresion!!.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
+        }
     }
 }

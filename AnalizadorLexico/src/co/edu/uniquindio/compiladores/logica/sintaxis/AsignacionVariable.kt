@@ -31,10 +31,28 @@ class AsignacionVariable : Sentencia {
         if(tipoDato!=null){
            asignacion.children.add(TreeItem("Tipo de Dato: " + tipoDato!!.lexema))
         }
-        var expresiones = expresion?.getArbolVisual()
+        print("aaaa")
+        var expresiones = expresion!!.getArbolVisual()
+
         asignacion.children.add(expresiones)
         return asignacion
     }
 
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
 
+        var s= tablaSimbolos.buscarSimboloValor(identificadorVariable!!.lexema, ambito)
+
+        if(s==null){
+            erroresSemantico.add(Error("El campo ${identificadorVariable!!.lexema} no existe en el ambito $ambito", identificadorVariable!!.fila, identificadorVariable!!.columna))
+        }else{
+            var tipo = s.tipo
+            if(expresion!=null) {
+                var tipoExp=expresion!!.obtenerTipo(tablaSimbolos, ambito, erroresSemantico)
+                if(tipoExp!=tipo){
+                    erroresSemantico.add(Error("El tipo de dato de la expresion $tipoExp no coincide con el tipo de dato del campo ${identificadorVariable!!.lexema}", identificadorVariable!!.fila, identificadorVariable!!.columna))
+
+                }
+            }
+        }
+    }
 }

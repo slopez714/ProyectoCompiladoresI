@@ -15,5 +15,7 @@ class Retorno(var expresion: Expresion?) : Sentencia() {
 
         return retorno
     }
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
 
+    }
 }

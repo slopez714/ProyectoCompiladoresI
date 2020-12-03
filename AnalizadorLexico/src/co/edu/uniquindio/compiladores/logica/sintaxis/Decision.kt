@@ -53,4 +53,18 @@ class Decision : Sentencia  {
         }
     }
 
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        if(condicion!=null){
+            condicion!!.analizarSemantica(tablaSimbolos,erroresSemantico,ambito)
+        }
+
+        for(s in listaSentencia!!){
+            s.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+        }
+        if(listaSentencia2!=null){
+            for(sen in listaSentencia2!!){
+                sen.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+            }
+        }
+    }
 }

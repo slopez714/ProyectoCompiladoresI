@@ -17,7 +17,7 @@ class Ciclo : Sentencia{
         this.incremento=incremento
         this.listaSentencia=listaSentencia
     }
-    constructor(expresion : ExpresionRelacional, listaSentencia: ArrayList<Sentencia>){
+    constructor(expresion: ExpresionRelacional, listaSentencia: ArrayList<Sentencia>){
         this.expresion=expresion
         this.listaSentencia=listaSentencia
     }
@@ -46,6 +46,18 @@ class Ciclo : Sentencia{
     override fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito: String) {
         for(s in listaSentencia!!){
             s.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos, ambito)
+        }
+    }
+
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        if (expresion != null) {
+            expresion!!.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+        }
+        if (asignacion != null) {
+            asignacion!!.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+        }
+        for (sentencia in listaSentencia!!) {
+            sentencia.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
         }
     }
 }

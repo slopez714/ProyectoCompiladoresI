@@ -18,4 +18,11 @@ class Impresion : Sentencia{
         return impresion
     }
 
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        if(expresion!=null){
+            expresion!!.analizarSemantica(tablaSimbolos,erroresSemantico,ambito)
+        }/*else{
+            erroresSemantico.add(Error("No se encuentra nada dendo de la impresion",))
+        }*/
+    }
 }

@@ -36,7 +36,17 @@ class ExpresionLogica : Expresion{
         return expresionLogica
     }
 
-    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, s: Simbolo) {
-        super.analizarSemantica(tablaSimbolos, erroresSemanticos, s)
+    override fun obtenerTipo(tablaSimbolos: TablaSimbolos, ambito:String,erroresSemanticos: ArrayList<Error>): String {
+        return "bool"
+    }
+
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito:String) {
+        if(expresion1!=null){
+            expresion1!!.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
+        }
+
+        if(expresion2!=null){
+            expresion2!!.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
+        }
     }
 }

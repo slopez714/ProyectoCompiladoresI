@@ -28,4 +28,8 @@ class DeclaracionVariable : Sentencia {
     override fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito: String) {
         tablaSimbolos.guardarSimboloValor(nombre!!.lexema, tipoDato!!.lexema, ambito, nombre!!.fila, nombre!!.columna)
     }
+
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        super.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+    }
 }

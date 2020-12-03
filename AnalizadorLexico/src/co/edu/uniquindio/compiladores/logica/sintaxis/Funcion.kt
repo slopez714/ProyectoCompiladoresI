@@ -35,10 +35,10 @@ class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParame
         return funcion
     }
 
-    fun obtenerParametros(): ArrayList<Error>{
-        val lista: ArrayList<Error> = ArrayList() //debe incializarla aaaaa ya profe muchas gracias. Listo, chao chao profe
+    fun obtenerParametros(): ArrayList<String>{
+        val lista: ArrayList<String> = ArrayList()
         for(p in listaParametros){
-            lista.add(Error(p.tipoDato.lexema, p.tipoDato.fila, p.tipoDato.columna))
+            lista.add(p.nombre.lexema)
         }
         return lista
     }
@@ -57,9 +57,8 @@ class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParame
 
     fun analizarSemantica(tablaSimbolos: TablaSimbolos , erroresSemantica: ArrayList<Error> ) {
 
-        for ( sentencia in listaSentencia) {
-
-            //sentencia.analizarSemantica(tablaSimbolos, erroresSemantica, sentencia.);
+        for (s in listaSentencia) {
+            s.analizarSemantica(tablaSimbolos, erroresSemantica, nombreFuncion.lexema)
         }
 
     }

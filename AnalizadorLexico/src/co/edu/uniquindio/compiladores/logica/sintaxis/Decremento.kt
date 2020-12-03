@@ -21,4 +21,13 @@ class Decremento(var identificador: Token?, var operador: Token?) : Sentencia() 
         return decremento
     }
 
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        var simbolo = tablaSimbolos.buscarSimboloValor(identificador!!.lexema, ambito)
+
+        if(simbolo==null){
+            erroresSemantico.add(Error("la variable ${identificador!!.lexema} no existe", identificador!!.fila, identificador!!.columna))
+        }else if(simbolo.tipo!="entero"||simbolo.tipo!="decimal"){
+            erroresSemantico.add(Error("la variable ${identificador!!.lexema} tiene un tipo de dato distinto", identificador!!.fila, identificador!!.columna))
+        }
+    }
 }

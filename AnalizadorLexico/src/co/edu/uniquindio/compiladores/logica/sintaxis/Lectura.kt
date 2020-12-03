@@ -19,4 +19,10 @@ class Lectura : Sentencia {
         return lectura
     }
 
+    override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
+        var simbolo= tablaSimbolos.buscarSimboloValor(identificador!!.lexema, ambito)
+        if(simbolo==null){
+            erroresSemantico.add(Error("la variable ${identificador!!.lexema} no existe", identificador!!.fila, identificador!!.columna))
+        }
+    }
 }

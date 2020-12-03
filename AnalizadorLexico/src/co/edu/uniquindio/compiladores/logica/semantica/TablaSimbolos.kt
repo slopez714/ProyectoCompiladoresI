@@ -23,10 +23,10 @@ class TablaSimbolos (var listaErrores: ArrayList<Error>){
     /**
      * Permite guardar un símbolo de tipo función en la tabla de símbolos
      */
-    fun guardarSimboloFuncion(nombre: String, tipo: String, tipoParametros: ArrayList<Error>): Simbolo? {
+    fun guardarSimboloFuncion(nombre: String, tipo: String?, tipoParametros: ArrayList<String>): Simbolo? {
         val s = buscarSimboloFuncion(nombre, tipoParametros)
         if (s == null) {
-            val nuevo = Simbolo(nombre, tipo, tipoParametros)
+            val nuevo = Simbolo(nombre, tipo!!, tipoParametros)
             listaSimbolos.add(nuevo)
             return nuevo
         } else {
@@ -50,7 +50,7 @@ class TablaSimbolos (var listaErrores: ArrayList<Error>){
     /**
      *Permite buscar un metodo o funcion en la tabla de simbolos
      */
-    fun buscarSimboloFuncion(nombre: String, tiposParametros: ArrayList<Error>): Simbolo? {
+    fun buscarSimboloFuncion(nombre: String, tiposParametros: ArrayList<String>): Simbolo? {
         for (simbolo in listaSimbolos) {
             if (simbolo.tipoParametros != null) {
                 if (nombre == simbolo.nombre && tiposParametros == simbolo.tipoParametros) {
