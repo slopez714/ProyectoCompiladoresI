@@ -19,6 +19,6 @@ class IdentificadorVariable(var identificador : Token) : Expresion() {
     }
 
     override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito:String) {
-        super.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
+
     }
 }

@@ -30,6 +30,10 @@ class DeclaracionVariable : Sentencia {
     }
 
     override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
-        super.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
+
+    }
+
+    override fun getJavaCode(): String {
+        return tipoDato!!.getJavaCode() + " " + nombre!!.getJavaCode()
     }
 }

@@ -38,7 +38,7 @@ class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParame
     fun obtenerParametros(): ArrayList<String>{
         val lista: ArrayList<String> = ArrayList()
         for(p in listaParametros){
-            lista.add(p.nombre.lexema)
+            lista.add(p.tipoDato.lexema) //acá debe guardar es el tipo de dato del parámetro, eje: entero, real, etc..
         }
         return lista
     }
@@ -61,5 +61,29 @@ class Funcion(var nombreFuncion: Token, var tipoRetorno: Token?, var listaParame
             s.analizarSemantica(tablaSimbolos, erroresSemantica, nombreFuncion.lexema)
         }
 
+    }
+
+    fun getJavaCode(): String {
+        var tipo = "void"
+        if (tipoRetorno != null) {
+            tipo = tipoRetorno!!.getJavaCode()
+        }
+        var codigo = "public static $tipo ${nombreFuncion.getJavaCode()} ("
+        if (nombreFuncion.lexema == "main") {
+            codigo += "String[] args"
+        } else {
+            if (listaParametros.isNotEmpty()) {
+                for (p in listaParametros) {
+                    codigo += p.getJavaCode().toString() + ","
+                }
+                codigo = codigo.substring(0, codigo.length - 1)
+            }
+        }
+        codigo += "){"
+        for (sentencia in listaSentencia) {
+            codigo += sentencia.getJavaCode()
+        }
+        codigo += "}"
+        return codigo
     }
 }

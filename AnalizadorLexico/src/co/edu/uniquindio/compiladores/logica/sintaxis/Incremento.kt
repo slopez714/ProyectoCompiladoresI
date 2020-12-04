@@ -30,4 +30,8 @@ class Incremento(var identificador: Token?, var operador: Token?) : Sentencia() 
             erroresSemantico.add(Error("la variable ${identificador!!.lexema} tiene un tipo de dato distinto", identificador!!.fila, identificador!!.columna))
         }
     }
+
+    override fun getJavaCode(): String {
+        return identificador!!.getJavaCode() + operador!!.getJavaCode() + ";"
+    }
 }

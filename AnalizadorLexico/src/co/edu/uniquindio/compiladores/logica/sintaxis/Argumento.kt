@@ -15,4 +15,7 @@ class Argumento(var identificadorVariable: Token?){
 
         return argumento
     }
+    fun getJavaCode():String{
+        return identificadorVariable!!.getJavaCode()
+    }
 }

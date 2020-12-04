@@ -49,4 +49,17 @@ class ExpresionLogica : Expresion{
             expresion2!!.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
         }
     }
+
+    override fun getJavaCode(): String {
+        if(expresion1!=null && expresion2!=null && operadorLogico!=null){
+            var operadorL= operadorLogico!!.getJavaCode()
+            return expresion1!!.getJavaCode() + " " + operadorL + " " + expresion2!!.getJavaCode()
+        }else if(expresion1!=null && expresion2==null && operadorLogico!=null){
+            var operadorL= operadorLogico!!.getJavaCode()
+            return operadorL + " " + expresion1!!.getJavaCode()
+        }else if(expresion1!=null && expresion2==null && operadorLogico==null){
+            return expresion1!!.getJavaCode()
+        }
+        return ""
+    }
 }

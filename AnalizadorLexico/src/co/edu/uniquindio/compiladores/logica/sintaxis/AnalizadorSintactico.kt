@@ -56,10 +56,9 @@ class AnalizadorSintactico(var listaTokens: ArrayList<Token>) {
                     val parametros: ArrayList<Parametro> = esListaParametros()
                     if (tokenActual.categoria == Categoria.PARENTESIS_DERECHO) {
                         obtenerSiguienteToken()
-                        var tipoRetorno: Token? = null
                         if (tokenActual.categoria == Categoria.DOS_PUNTOS) {
                             obtenerSiguienteToken()
-                            tipoRetorno = esTipoRetorno()
+                            var tipoRetorno: Token? = esTipoRetorno()
                             if (tipoRetorno != null){
                                 obtenerSiguienteToken()
                                 val bloqueSentencias: ArrayList<Sentencia> = esBloqueSentencias()
@@ -820,8 +819,8 @@ class AnalizadorSintactico(var listaTokens: ArrayList<Token>) {
     fun esTipoRetorno(): Token?{
 
         if(tokenActual.categoria==Categoria.PALABRARESERVADA ){
-            if(tokenActual.lexema =="entero"|| tokenActual.lexema =="decimal"|| tokenActual.lexema =="boolean"||
-                    tokenActual.lexema =="caracter"|| tokenActual.lexema =="cadena"){
+            if(tokenActual.lexema =="entero"|| tokenActual.lexema =="decimal"|| tokenActual.lexema =="bool"||
+                    tokenActual.lexema =="caracter"|| tokenActual.lexema =="cad"){
                 return tokenActual
             }
         }

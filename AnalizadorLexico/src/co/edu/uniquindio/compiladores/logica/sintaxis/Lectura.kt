@@ -7,6 +7,7 @@ import javafx.scene.control.TreeItem
 
 class Lectura : Sentencia {
     var identificador : Token? = null
+    var tipoGlobal :String? = ""
 
     constructor(identificador: Token?){
         this.identificador=identificador
@@ -24,5 +25,19 @@ class Lectura : Sentencia {
         if(simbolo==null){
             erroresSemantico.add(Error("la variable ${identificador!!.lexema} no existe", identificador!!.fila, identificador!!.columna))
         }
+        tipoGlobal=simbolo!!.tipo
+    }
+
+    override fun getJavaCode(): String {
+        if(tipoGlobal=="entero"){
+            return identificador!!.getJavaCode()+"="+"Integer.parseInt(JOptionPane.showInputDialog(null,\"Escriba aqui\"" + "));"
+        }else if(tipoGlobal=="decimal"){
+            return identificador!!.getJavaCode()+"="+"Double.parseDouble(JOptionPane.showInputDialog(null,\"Escriba aqui\"" + "));"
+        }else if(tipoGlobal=="cad"){
+            return identificador!!.getJavaCode()+"="+"JOptionPane.showInputDialog(null,\"Escriba aqui\"" + ");"
+        }else if(tipoGlobal=="bool"){
+            return identificador!!.getJavaCode()+"="+"JOptionPane.showInputDialog(null,\"Escriba aqui\"" + ");"
+        }
+        return ""
     }
 }

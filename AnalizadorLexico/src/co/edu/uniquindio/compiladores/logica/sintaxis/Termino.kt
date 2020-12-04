@@ -10,4 +10,8 @@ class Termino(var termino: Token) {
 
         return termino
     }
+
+    fun getJavaCode():String{
+        return termino!!.getJavaCode()
+    }
 }

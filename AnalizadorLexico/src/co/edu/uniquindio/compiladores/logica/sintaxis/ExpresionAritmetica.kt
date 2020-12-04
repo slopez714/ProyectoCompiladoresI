@@ -38,7 +38,10 @@ class ExpresionAritmetica : Expresion {
     override fun getArbolVisual(): TreeItem<String> {
         var expresionA = TreeItem("Expresion Aritmetica")
 
-        expresionA.children.add(TreeItem("Operador:" + operador!!.lexema))
+        if( operador!=null ){
+            expresionA.children.add(TreeItem("Operador:" + operador!!.lexema))
+        }
+
         if(termino!=null){
             expresionA.children.add(termino!!.getArbolVisual())
         }

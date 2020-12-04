@@ -39,4 +39,8 @@ class InvocacionMetodo : Sentencia {
             erroresSemantico.add(Error("El metodo ${identificador!!.lexema} no existe", identificador!!.fila, identificador!!.columna))
         }
     }
+
+    override fun getJavaCode(): String {
+        return super.getJavaCode()
+    }
 }

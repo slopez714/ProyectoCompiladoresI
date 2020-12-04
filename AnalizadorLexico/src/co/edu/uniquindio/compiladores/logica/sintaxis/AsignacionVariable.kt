@@ -31,10 +31,11 @@ class AsignacionVariable : Sentencia {
         if(tipoDato!=null){
            asignacion.children.add(TreeItem("Tipo de Dato: " + tipoDato!!.lexema))
         }
-        print("aaaa")
-        var expresiones = expresion!!.getArbolVisual()
+        if(expresion!=null){
+            var expresiones = expresion!!.getArbolVisual()
+            asignacion.children.add(expresiones)
+        }
 
-        asignacion.children.add(expresiones)
         return asignacion
     }
 
@@ -55,4 +56,8 @@ class AsignacionVariable : Sentencia {
             }
         }
     }
+
+    /*fun getJavaCode():String{
+        return identificadorVariable!!.lexema + " " +
+    }*/
 }

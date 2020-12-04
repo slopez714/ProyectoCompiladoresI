@@ -29,4 +29,14 @@ class UnidadDeCompilacion( var listaFunciones: ArrayList<Funcion>) {
             f.analizarSemantica(tablaSimbolos, erroresSemanticos);
         }
     }
+
+    fun getJavaCode(): String {
+
+        var codigo = "public class Principal{\n"
+        for (funcion in listaFunciones) {
+            codigo += funcion.getJavaCode()
+        }
+        codigo += "}"
+        return codigo
+    }
 }

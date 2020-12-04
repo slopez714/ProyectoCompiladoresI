@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="512.0" prefWidth="648.0" style="-fx-background-color: #2E2E2E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.compiladores.logica.controladores.inicioController">
    <children>
-      <Button fx:id="botonCambiar" layoutX="258.0" layoutY="472.0" mnemonicParsing="false" onAction="#analizarCodigo" text="Analizar Codigo">
+      <Button fx:id="botonCambiar" layoutX="166.0" layoutY="471.0" mnemonicParsing="false" onAction="#analizarCodigo" text="Analizar Codigo">
          <font>
             <Font name="DejaVu Sans Bold" size="13.0" />
          </font>
@@ -33,7 +33,7 @@
                 </effect>
             </TableView>
           </Tab>
-          <Tab fx:id="tabErroresSintactico" text="Errores sintacticos">
+          <Tab fx:id="tabErroresSintactico" text="Errores">
               <TableView fx:id="tablaErroresSintacticos" layoutX="445.0" layoutY="244.0" prefHeight="99.0" prefWidth="129.0">
                   <columns>
                       <TableColumn fx:id="colErrorSintaxis" prefWidth="75.0" text="Error" />
@@ -51,5 +51,6 @@
 
         </tabs>
       </TabPane>
+      <Button fx:id="botonTraducir" layoutX="297.0" layoutY="471.0" mnemonicParsing="false" onAction="#traducirCodigo" text="Traducir Codigo" />
    </children>
 </AnchorPane>

@@ -17,4 +17,8 @@ class Parametro( var nombre:Token , var tipoDato: Token) {
 
         return parametros
     }
+
+    fun getJavaCode():String{
+        return tipoDato.lexema + " " + nombre.lexema
+    }
 }

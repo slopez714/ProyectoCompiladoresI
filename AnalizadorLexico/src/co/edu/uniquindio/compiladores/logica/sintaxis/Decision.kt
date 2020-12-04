@@ -67,4 +67,26 @@ class Decision : Sentencia  {
             }
         }
     }
+
+    override fun getJavaCode(): String {
+        var sentenciaIf= "if("
+        if(condicion!=null){
+            sentenciaIf += condicion!!.getJavaCode() + "){"
+            if(listaSentencia!=null){
+                for(s in listaSentencia!!){
+                    sentenciaIf += s.getJavaCode() + " "
+                }
+            }
+            sentenciaIf+="}"
+            if(listaSentencia2!=null){
+                sentenciaIf+="else{"
+                for(s in listaSentencia2!!){
+                    sentenciaIf += s.getJavaCode() + " "
+                }
+                sentenciaIf += "}"
+            }
+            return sentenciaIf
+        }
+        return ""
+    }
 }

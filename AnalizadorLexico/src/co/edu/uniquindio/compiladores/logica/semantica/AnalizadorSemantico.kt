@@ -10,7 +10,7 @@ class AnalizadorSemantico(val uc:UnidadDeCompilacion) {
         uc.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos)
     }
     fun analizarSemantica() {
-        uc.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos)
+        //uc.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos) <<-- esto era lo que hacía que le reportara todos esos errores
         uc.analizarSemantica(tablaSimbolos, erroresSemanticos);
     }
 }

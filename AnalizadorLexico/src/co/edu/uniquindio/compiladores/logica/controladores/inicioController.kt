@@ -5,6 +5,7 @@ import co.edu.uniquindio.compiladores.logica.lexico.Error
 import co.edu.uniquindio.compiladores.logica.lexico.Token
 import co.edu.uniquindio.compiladores.logica.semantica.AnalizadorSemantico
 import co.edu.uniquindio.compiladores.logica.sintaxis.AnalizadorSintactico
+import co.edu.uniquindio.compiladores.logica.sintaxis.UnidadDeCompilacion
 import javafx.collections.FXCollections
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
@@ -40,6 +41,8 @@ class inicioController: Initializable{
     @FXML
     lateinit var arbolVisual: TreeView<String>
 
+    private var unidadCompilacion: UnidadDeCompilacion? = null
+
     override fun initialize(p0: URL?, p1: ResourceBundle?)
     {
         colLexema.cellValueFactory = PropertyValueFactory( "lexema")
@@ -63,20 +66,19 @@ class inicioController: Initializable{
             tablaTokens.items = FXCollections.observableArrayList( lexico.listaTokens )
 
             val sintaxis= AnalizadorSintactico(lexico.listaTokens)
-            val uc= sintaxis.esUnidadDeCompilacion()
+            unidadCompilacion= sintaxis.esUnidadDeCompilacion()
 
             tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(sintaxis.listaErrores)
 
-            if(uc!=null){
-                arbolVisual.root = uc.getArbolVisual()
+            if(unidadCompilacion!=null){
+                arbolVisual.root = unidadCompilacion!!.getArbolVisual()
 
-                val semantica= AnalizadorSemantico(uc)
+                val semantica= AnalizadorSemantico(unidadCompilacion!!)
                 semantica.llenarTablaSimbolos()
-                print(semantica.tablaSimbolos)
-                print(semantica.erroresSemanticos)
-
                 semantica.analizarSemantica()
-                print(semantica.erroresSemanticos)
+                println(semantica.tablaSimbolos)
+                tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(semantica.erroresSemanticos)
+
             }else{
                 arbolVisual.root=TreeItem("Unidad de Compilacion")
             }
@@ -88,7 +90,12 @@ class inicioController: Initializable{
         }
 
     }
+    @FXML
+    fun traducirCodigo(e:ActionEvent){
+        if(unidadCompilacion!=null){
+           println(unidadCompilacion!!.getJavaCode())
+        }
 
-
+    }
 }
 

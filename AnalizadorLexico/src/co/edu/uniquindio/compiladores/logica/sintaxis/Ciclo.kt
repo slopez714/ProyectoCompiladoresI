@@ -60,4 +60,25 @@ class Ciclo : Sentencia{
             sentencia.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
         }
     }
+
+    override fun getJavaCode(): String {
+        if(expresion!=null){
+            var mientras= "while(" + expresion!!.getJavaCode() + "){"
+            for (s in listaSentencia!!){
+                mientras += s.getJavaCode() + " "
+            }
+            mientras+= "}"
+            return mientras
+        }else if(asignacion!=null && expresion!=null && incremento!=null){
+            var para= "for(" + asignacion!!.getJavaCode().substring(0,asignacion!!.getJavaCode().length-1) +
+                    "; " + expresion!!.getJavaCode()+ ";" + incremento!!.getJavaCode() + "){"
+
+            for(s in listaSentencia!!){
+                para += s.getJavaCode() + " "
+            }
+            para+="}"
+            return para
+        }
+        return ""
+    }
 }

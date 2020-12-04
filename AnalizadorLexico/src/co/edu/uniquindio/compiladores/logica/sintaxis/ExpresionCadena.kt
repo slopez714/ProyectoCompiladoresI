@@ -37,4 +37,12 @@ class ExpresionCadena: Expresion {
             expresion!!.analizarSemantica(tablaSimbolos, erroresSemanticos, ambito)
         }
     }
+
+    override fun getJavaCode(): String {
+        var cad = cadena!!.getJavaCode()
+        if(cad!=null){
+            cad += " + (" + expresion!!.getJavaCode() + ")"
+        }
+        return cad
+    }
 }

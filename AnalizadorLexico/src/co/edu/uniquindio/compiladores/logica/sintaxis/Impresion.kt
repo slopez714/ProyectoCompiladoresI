@@ -7,7 +7,7 @@ import javafx.scene.control.TreeItem
 class Impresion : Sentencia{
     var expresion : Expresion?= null
 
-    constructor(expresion : Expresion){
+    constructor(expresion: Expresion){
         this.expresion=expresion
     }
 
@@ -20,9 +20,16 @@ class Impresion : Sentencia{
 
     override fun analizarSemantica(tablaSimbolos: TablaSimbolos, erroresSemantico: ArrayList<Error>, ambito: String) {
         if(expresion!=null){
-            expresion!!.analizarSemantica(tablaSimbolos,erroresSemantico,ambito)
+            expresion!!.analizarSemantica(tablaSimbolos, erroresSemantico, ambito)
         }/*else{
             erroresSemantico.add(Error("No se encuentra nada dendo de la impresion",))
         }*/
+    }
+
+    override fun getJavaCode(): String {
+        if(expresion!=null){
+            return "JOptionPane.showMessageDialog(null," + expresion!!.getJavaCode() + ");"
+        }
+        return ""
     }
 }

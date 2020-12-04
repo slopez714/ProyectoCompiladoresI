@@ -1426,7 +1426,7 @@ class AnalizadorLexico (var codigoFuente:String){
         palabrasResevadas.add("publico")
         palabrasResevadas.add("privado")
         palabrasResevadas.add("null")
-        palabrasResevadas.add("como")
+        palabrasResevadas.add("continuar")
         palabrasResevadas.add("romper")
         palabrasResevadas.add("paquete")
         palabrasResevadas.add("importar")
