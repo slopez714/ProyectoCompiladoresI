@@ -12,6 +12,7 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.*
 import javafx.scene.control.cell.PropertyValueFactory
+import java.io.File
 import java.net.URL
 import java.util.*
 
@@ -42,6 +43,9 @@ class inicioController: Initializable{
     lateinit var arbolVisual: TreeView<String>
 
     private var unidadCompilacion: UnidadDeCompilacion? = null
+    private var lexico: AnalizadorLexico? = null
+    private var sintaxis: AnalizadorSintactico? = null
+    private var semantica: AnalizadorSemantico? = null
 
     override fun initialize(p0: URL?, p1: ResourceBundle?)
     {
@@ -60,24 +64,24 @@ class inicioController: Initializable{
     @FXML
     fun analizarCodigo(e: ActionEvent) {
         if(codigoFuente.text.length>0){
-            val lexico = AnalizadorLexico(codigoFuente.text)
-            lexico.analizar()
+            lexico = AnalizadorLexico(codigoFuente.text)
+            lexico!!.analizar()
 
-            tablaTokens.items = FXCollections.observableArrayList( lexico.listaTokens )
+            tablaTokens.items = FXCollections.observableArrayList( lexico!!.listaTokens )
 
-            val sintaxis= AnalizadorSintactico(lexico.listaTokens)
-            unidadCompilacion= sintaxis.esUnidadDeCompilacion()
+            sintaxis= AnalizadorSintactico(lexico!!.listaTokens)
+            unidadCompilacion= sintaxis!!.esUnidadDeCompilacion()
 
-            tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(sintaxis.listaErrores)
+            tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(sintaxis!!.listaErrores)
 
             if(unidadCompilacion!=null){
                 arbolVisual.root = unidadCompilacion!!.getArbolVisual()
 
-                val semantica= AnalizadorSemantico(unidadCompilacion!!)
-                semantica.llenarTablaSimbolos()
-                semantica.analizarSemantica()
-                println(semantica.tablaSimbolos)
-                tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(semantica.erroresSemanticos)
+                semantica= AnalizadorSemantico(unidadCompilacion!!)
+                semantica!!.llenarTablaSimbolos()
+                semantica!!.analizarSemantica()
+                println(semantica!!.tablaSimbolos)
+                tablaErroresSintacticos.items= FXCollections.observableArrayList<Error?>(semantica!!.erroresSemanticos)
 
             }else{
                 arbolVisual.root=TreeItem("Unidad de Compilacion")
@@ -93,7 +97,16 @@ class inicioController: Initializable{
     @FXML
     fun traducirCodigo(e:ActionEvent){
         if(unidadCompilacion!=null){
-           println(unidadCompilacion!!.getJavaCode())
+            val codigoP = unidadCompilacion!!.getJavaCode()
+            print(codigoP)
+            File("src/Principal.java").writeText( codigoP )
+            try {
+                val p = Runtime.getRuntime().exec("javac src/Principal.java")
+                p.waitFor()
+                Runtime.getRuntime().exec("java Principal", null, File("src"))
+            } catch (ea: Exception) {
+                ea.printStackTrace()
+            }
         }
 
     }

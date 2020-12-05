@@ -40,6 +40,10 @@ class InvocacionMetodo : Sentencia {
         }
     }
 
+    override fun llenarTablaSimbolos(tablaSimbolos: TablaSimbolos, erroresSemanticos: ArrayList<Error>, ambito: String) {
+        super.llenarTablaSimbolos(tablaSimbolos, erroresSemanticos, ambito)
+    }
+
     override fun getJavaCode(): String {
         return super.getJavaCode()
     }

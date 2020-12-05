@@ -820,7 +820,7 @@ class AnalizadorSintactico(var listaTokens: ArrayList<Token>) {
 
         if(tokenActual.categoria==Categoria.PALABRARESERVADA ){
             if(tokenActual.lexema =="entero"|| tokenActual.lexema =="decimal"|| tokenActual.lexema =="bool"||
-                    tokenActual.lexema =="caracter"|| tokenActual.lexema =="cad"){
+                    tokenActual.lexema =="caracter"|| tokenActual.lexema =="cad"||tokenActual.lexema =="noretorna"){
                 return tokenActual
             }
         }
